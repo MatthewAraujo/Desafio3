@@ -3,6 +3,19 @@ require('../../database')
 
 class SequelizeConsultorioRepository{
 
+
+  async create(){
+    const consulta = await Consulta.create({
+      cpf,
+      data,
+      hora_inicio,
+      hora_final,
+    })
+
+    return consulta
+
+  }
+
   async findAppointment(data_inicio, data_final){
     const consultaNoMeio = await Consulta.findOne({
       where: {

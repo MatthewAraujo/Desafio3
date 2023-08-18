@@ -1,4 +1,4 @@
-const makeExcluirUseCase = require("../../../repositories/factories/make-agendar-use-case")
+const makeAgendarUseCase = require("../../../repositories/factories/make-agendar-use-case")
 
 
 async function agendar(data){
@@ -9,10 +9,10 @@ async function agendar(data){
     hora_final: z.string(),
   })
 
-  const { nome,cpf, hora_inicio,data, hora_final } = agendarBodySchema.parse(data)
+  const { cpf, hora_inicio,data, hora_final } = agendarBodySchema.parse(data)
   
   try{
-    const agendarUseCase = makeExcluirUseCase()
+    const agendarUseCase = makeAgendarUseCase()
     await agendarUseCase.execute({
       cpf,
       data,

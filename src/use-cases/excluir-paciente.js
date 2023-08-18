@@ -1,5 +1,5 @@
 
-const SequelizePacienteRepository = require("../repositories/sequelize/sequelize-paciente-repository")
+const SequelizePacienteRepository = require("../repositories/sequelize/sequelize-paciente-repository");
 const PacienteNotFoundError = require("./errors/paciente-not-found")
 
 class ExcludePacientUseCase {

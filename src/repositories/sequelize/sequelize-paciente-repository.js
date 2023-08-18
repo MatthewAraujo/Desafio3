@@ -20,7 +20,7 @@ class SequelizePacienteRepository  {
   }
 
 
-  async exclude(cpf){
+  async delete(cpf){
     const paciente = await Paciente.destroy({
       where: {
         cpf:cpf,

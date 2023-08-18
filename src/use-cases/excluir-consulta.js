@@ -1,6 +1,6 @@
 const SequelizeConsultorioRepository = require("../repositories/sequelize/sequelize-consultorio-repository");
 
-class ExcludePacientUseCase {
+class ExcludeConsultaUseCase {
   constructor(){
   }
 
@@ -8,23 +8,24 @@ class ExcludePacientUseCase {
    cpf,
   }) {
  
-    const consultaRepository = new SequelizeConsultorioRepository()
-    const userHasConsultaCpf = await consultaRepository.findByCpf(formatCpf)
-    console.log(userWithSameCpf, 'userWithSameCpf')
+    const userHasConsultaCpf = await consultaRepository.findByCpf(cpf)
     
-
-    if (!userWithSameCpf) {
+    if (!userHasConsultaCpf) {
       throw new PacienteNotFoundError();
     }
+
+    const consultaRepository = new SequelizeConsultorioRepository()
+
+   
 
     const paciente = await pacienteRepository.delete({
       cpf,
     })
-    çonsole.log(paciente)
+    console.log(paciente)
     return {
       paciente,
     }
   }
 }
 
-module.exports = ExcludePacientUseCase
+module.exports = ExcludeConsultaUseCase

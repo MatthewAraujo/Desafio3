@@ -1,18 +1,5 @@
 // const Consulta = require("./models/Consulta");
-// const Paciente = require("./models/Paciente");
-// require('./database')
-// const Paz = {
-//   async store() {
-//     const paciente = await Paciente.create({
-//       nome: 'João',
-//       data_nascimento: '1990-01-01',
-//       cpf: '12345678900',
-//      });
-
-
-//     return paciente
-//   }
-// }
+require('./database')
 
 
 
@@ -50,9 +37,25 @@
 //   }
 // }
 
+// const Paciente = require("./models/Paciente");
+
+
+// const paciente = {
+//   async store() {
+//     const paciente = await Paciente.create({
+//       nome: 'João',
+//       data_nascimento: '1990-01-01',
+//       cpf: '12345678900',
+//      });
+
+
+//     return paciente
+//   }
+//  }
+
 
 // async function main() {
-//   const pacientes = await Con.store()
+//   const pacientes = await paciente.store()
 //   console.log(pacientes)
 // }
 

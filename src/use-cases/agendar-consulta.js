@@ -40,7 +40,7 @@ class AgendarPacienteUseCase {
 
 
 
-    const paciente = await pacienteRepository.create({
+    const paciente = await consultorioSequelizeRepository.create({
       cpf,
       data,
       hora_inicio,
