@@ -6,7 +6,7 @@ const PacienteUnderAgeError = require('../../../use-cases/errors/paciente-menor-
 
 async function register(data){
   const registerBodySchema = z.object({
-    nome: z.string().min(3).max(255),
+    nome: z.string().min(5).max(255),
     data_nascimento: z.string().min(3).max(255),
     cpf: z.string().length(11),
   })

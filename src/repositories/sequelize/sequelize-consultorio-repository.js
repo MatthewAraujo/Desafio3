@@ -7,7 +7,6 @@ class SequelizeConsultorioRepository{
   async create(){
     const consulta = await Consulta.create({
       cpf,
-      data,
       hora_inicio,
       hora_final,
     })

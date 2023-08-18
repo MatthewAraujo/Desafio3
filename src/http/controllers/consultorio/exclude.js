@@ -1,6 +1,6 @@
 const { z } = require('zod')
-
 const makeExcluirConsultaUseCase = require('../../../repositories/factories/make-exclude-consulta-use-case')
+
 async function exclude(data){
   const excludeBodySchema = z.object({
     cpf: z.string().length(11),

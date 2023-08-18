@@ -1,5 +1,6 @@
 const PromptSync = require('prompt-sync')
 const PacienteView = require('./PacienteViewClass');
+const ConsultorioView = require('./ConsultorioViewClass');
 
 const prompt = PromptSync({ sigint: true }); // Permite terminar o programa com CTRL-C
 
@@ -69,7 +70,7 @@ class Menu {
     }while(opcao !== '5')
   }
 
-  menuAgenda(opcao) {
+  async menuAgenda(opcao) {
     do{
       console.log('==================================');
 
@@ -82,6 +83,22 @@ class Menu {
 
       opcao = prompt('Digite a opção desejada: ');
       switch (opcao) {
+        case '1':
+          const consulta = new ConsultorioView()
+          const resposta = await consulta.agendarConsulta()
+          if(resposta) {
+            console.log(resposta)
+          }
+          break;
+
+        case '2':
+          const consulta2 = new ConsultorioView()
+          const resposta2 = await consulta2.ExcluirConsulta()
+          if(resposta2) {
+            console.log(resposta2)
+          }
+          break;
+
         case '5':
           break
       }
